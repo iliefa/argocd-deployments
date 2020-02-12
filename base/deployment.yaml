@@ -18,5 +18,5 @@
             image: iliefa/samples:v1
             envFrom:
                 - secretRef:
-                    name: secret
+                    name: dev-secret
             
