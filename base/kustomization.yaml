@@ -1,2 +1,7 @@
 resources:
     - deployment.yaml
+secretGenerator:
+    - name:  dev-secret
+        literals:
+        - DB_URL='dev_url'
+        - DB_USER='dev_user' 
