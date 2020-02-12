@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: springboot-sample
+  name: springboot-sample
+spec:
+  ports:
+  - port: 8082
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: springboot-sample

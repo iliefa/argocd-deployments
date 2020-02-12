@@ -8,3 +8,5 @@ secretGenerator:
       literals:
       - DB_URL='test_url'
       - DB_USER='test_user' 
+commonLabels:
+  env: test
