@@ -1,0 +1,22 @@
+---
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: springboot-sample
+    spec:
+      replicas: 3
+      selector:
+        matchLabels:
+          app: springboot-sample
+      template:
+        metadata:
+          labels:
+            app: springboot-sample
+        spec:
+          containers:
+          - name: springboot-sample
+            image: iliefa/samples:v1
+            envFrom:
+                - secretRef:
+                    name: test-secret
+            
