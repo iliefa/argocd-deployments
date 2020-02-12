@@ -8,5 +8,3 @@ secretGenerator:
       literals:
       - DB_URL='dev_url'
       - DB_USER='dev_user' 
-commonLabels:
-  env: dev
