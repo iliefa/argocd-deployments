@@ -16,7 +16,3 @@
           containers:
           - name: springboot-sample
             image: iliefa/samples:v1
-            envFrom:
-                - secretRef:
-                    name: dev-secret
-            
