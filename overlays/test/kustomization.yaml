@@ -1,10 +1,10 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-resources:
+bases:
 - ../../base
 namePrefix: test-
 secretGenerator:
-    - name: test-secret
-        literals:
-        - DB_URL='test_url'
-        - DB_USER='test_user' 
+    - name: secret
+      literals:
+      - DB_URL='test_url'
+      - DB_USER='test_user' 
