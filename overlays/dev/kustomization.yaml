@@ -10,6 +10,6 @@ secretGenerator:
       - DB_USER='dev_user'
 images:      
   - name: iliefa/samples
-    newTag: v2
+    newTag: v3
 patchesStrategicMerge:
 - replica.yaml
