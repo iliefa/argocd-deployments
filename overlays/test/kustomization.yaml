@@ -8,3 +8,6 @@ secretGenerator:
       literals:
       - DB_URL='test_url'
       - DB_USER='test_user' 
+images:      
+  - name: iliefa/samples
+    newTag: v2
