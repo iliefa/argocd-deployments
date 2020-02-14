@@ -11,3 +11,10 @@ secretGenerator:
 images:      
   - name: iliefa/samples
     newTag: v2
+patchesJson6902:
+  - target:
+      group: extensions
+      version: v1beta1
+      kind: Ingress
+      name: ingress-sample
+    path: ingress_patch.json

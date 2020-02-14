@@ -1,0 +1,15 @@
+- op: replace
+  path: /spec/rules/0/host
+  value: k8s-svc4test.hmm.lan
+
+- op: replace
+  path: "/metadata/annotations/virtual-server~1health"
+  value:  |
+     [
+       { 
+         "path": "k8s-svc4test.hmm.lan/actuator/health/",
+         "send": "GET  HTTP/1.1/",
+         "interval": 5,
+         "timeout":  10
+       }
+     ]

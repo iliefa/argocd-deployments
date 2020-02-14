@@ -1,0 +1,31 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    virtual-server.f5.com/health: |
+      [
+        {
+          "path": "k8s-svc4.hmm.lan/actuator/health",
+          "send": "GET  HTTP/1.1/",
+          "interval": 5,
+          "timeout":  10
+        }
+      ]
+    virtual-server.f5.com/ip: 192.168.101.247
+    virtual-server.f5.com/partition: k8s.calico
+  name: ingress-sample
+spec:
+  rules:
+    # URL
+    - host: k8s-svc4.hmm.lan
+      http:
+        # path to Service from URL
+        paths:
+          - path: /hello
+            backend:
+              serviceName: springboot-sample
+              servicePort: 8082
+          - path: /actuator/health
+            backend:
+              serviceName: springboot-sample
+              servicePort: 8082
