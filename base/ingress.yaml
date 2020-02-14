@@ -5,8 +5,8 @@ metadata:
     virtual-server.f5.com/health: |
       [
         {
-          "path": "k8s-svc4.hmm.lan/actuator/health",
-          "send": "GET  HTTP/1.1/",
+          "path": "k8s-svc4.hmm.lan/hello",
+          "send": "GET /../actuator/health HTTP/1.1/",
           "interval": 5,
           "timeout":  10
         }
@@ -22,10 +22,6 @@ spec:
         # path to Service from URL
         paths:
           - path: /hello
-            backend:
-              serviceName: springboot-sample
-              servicePort: 8082
-          - path: /actuator/health
             backend:
               serviceName: springboot-sample
               servicePort: 8082
