@@ -3,7 +3,7 @@
   value: k8s-svc4test.hmm.lan
 
 - op: replace
-  path: "/metadata/annotations/virtual-server~1health"
+  path: "/metadata/annotations/virtual-server.f5.com~1health"
   value:  |
      [
        { 
