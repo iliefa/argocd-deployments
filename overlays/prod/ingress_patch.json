@@ -1,0 +1,18 @@
+- op: replace
+  path: /spec/rules/0/host
+  value: k8s-svc4prod.hmm.lan
+
+- op: replace
+  path: "/metadata/annotations/virtual-server.f5.com~1health"
+  value:  |
+     [
+       { 
+         "path": "k8s-svc4prod.hmm.lan/hello",
+         "send": "GET /../actuator/health HTTP/1.1/",
+         "interval": 5,
+         "timeout":  10
+       }
+     ]
+- op: replace
+  path: "/metadata/annotations/virtual-server.f5.com~1ip"
+  value: "192.168.101.243"
